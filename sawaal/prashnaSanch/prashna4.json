@@ -1,0 +1,7 @@
+[
+    {
+        "sawaal": "Which of these scientists have won Nobel prizes in multiple categories?",
+        "choices": ["Neils Bohr", "Linus Pauling", "Marie Curie", "Richard Feinman"],
+        "bahutSahiJawaab": [false, true, true, false]
+    }
+]

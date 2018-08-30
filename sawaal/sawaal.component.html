@@ -1,0 +1,49 @@
+<div *ngIf='!evaluate'>
+<div *ngIf='singleCorrect'>
+  <h6>Select one</h6>
+  <h3>{{question}}</h3>
+
+  <ul class="list-group">
+    <div *ngFor='let choice of choices'>
+        <li (click)='onSelectSingle(choice)'class="list-group-item list-group-item-action"
+          [ngClass]="{'clickedChoice' : choice == currentSelectedSingle}">{{choice}}</li>
+    </div>
+  </ul>
+
+  <button style="float: right" class="btn btn-primary"
+    (click)="onNextSingle()"
+    *ngIf='questionNo != questionMax'>Next >></button>
+  <button style="float: left" class="btn btn-primary"
+    (click)="onBackSingle()"
+    *ngIf='questionNo != 1'><< Back</button>
+  <button style="float: right" class="btn btn-success btn-lg"
+    (click)="onEvaluateSingle()"
+    *ngIf='questionNo == questionMax'>Evaluate</button>
+</div>
+
+<div *ngIf='!singleCorrect'>
+  <h6>Select one or more</h6>
+  <h3>{{question}}</h3>
+
+  <ul class="list-group">
+    <div *ngFor='let choice of choices'>
+        <li (click)='onSelectMultiple(choice)'class="list-group-item list-group-item-action"
+          [ngClass]="{'clickedChoice' : currentSelectedMultiple[choices.indexOf(choice)] == true}">{{choice}}</li>
+    </div>
+  </ul>
+
+  <button style="float: right" class="btn btn-primary"
+    (click)="onNextMultiple()"
+    *ngIf='questionNo != questionMax'>Next >></button>
+  <button style="float: left" class="btn btn-primary"
+    (click)="onBackMultiple()"
+    *ngIf='questionNo != 1'><< Back</button>
+  <button style="float: right" class="btn btn-success btn-lg"
+    (click)="onEvaluateMultiple()"
+    *ngIf='questionNo == questionMax'>Evaluate</button>
+</div>
+</div>
+
+<div *ngIf='evaluate'>
+  <h3>You scored {{score}} points on Let's Take A Quiz.</h3>
+</div>

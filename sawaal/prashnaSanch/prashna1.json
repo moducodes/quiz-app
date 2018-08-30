@@ -1,0 +1,7 @@
+[
+    {
+        "sawaal": "Which of these colors appear in the 5-ring Olympics logo?",
+        "choices": ["Red", "Brown", "Black", "White", "Blue"],
+        "bahutSahiJawaab": [true, false, true, false, true]
+    }
+]
